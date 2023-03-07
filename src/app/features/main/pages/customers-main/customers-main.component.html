@@ -1,0 +1,12 @@
+<div class="loading" *ngIf="isBusy$ | async">
+    <mat-spinner [diameter]="28"></mat-spinner>
+</div>
+<div>
+    <ng-container *ngIf="customers$ | async as customers">
+        <div>
+            <app-customer-list [customers]="customers"></app-customer-list>
+        </div>
+    </ng-container>
+</div>
+
+<!-- <button (click)="stopObs()">Stop</button> -->

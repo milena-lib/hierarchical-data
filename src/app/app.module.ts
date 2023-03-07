@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,15 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    CoreModule,
+    RouterModule.forRoot([
+      {
+        path: 'main',
+        loadChildren: () => import('./features/main/main.module').then(x => x.MainModule)
+      },
+      { path: '', pathMatch: 'full', redirectTo: 'main'}
+    ]),
+    BrowserAnimationsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
