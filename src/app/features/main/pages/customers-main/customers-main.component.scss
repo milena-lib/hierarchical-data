@@ -12,3 +12,13 @@
         left: 50%;
     }
 }
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.container .left, .container .right {
+    width: 50%;
+    border: 1px solid red;
+}

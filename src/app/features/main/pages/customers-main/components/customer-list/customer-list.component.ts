@@ -4,6 +4,7 @@ import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { Customer } from 'src/app/features/main/model/customer.model';
 import { CustomersMainStoreService } from '../../store/customers-main-store.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { SearchStoreService } from '../../store/search-store.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -18,7 +19,7 @@ export class CustomerListComponent implements OnInit, OnChanges {
   //readonly dataSource = new MatTreeNestedDataSource<Customer>();
   readonly dataSource = new MatTableDataSource<Customer>();
   readonly displayedColumns = ['id', 'code', 'firstName', 'lastName'];
-  
+
   constructor(private readonly store: CustomersMainStoreService) { }
 
   ngOnInit(): void {

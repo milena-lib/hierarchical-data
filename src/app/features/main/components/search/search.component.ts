@@ -34,7 +34,8 @@ export class SearchComponent implements OnInit {
     searchControl: this.fb.control<string>('')
   });
   
-  searchResults$ = this.storeSearch.results$;
+  // searchResults$ = this.storeSearch.results$;
+  // userInput$?: Observable<string | null>;  
   
   constructor(private readonly fb: FormBuilder, 
     private readonly storeSearch: SearchStoreService) { }
@@ -44,11 +45,14 @@ export class SearchComponent implements OnInit {
     const userInput$ = this.searchForm.controls.searchControl.valueChanges.pipe(
       debounceTime(200));
     
-    const results$ = this.storeSearch.setFilter(userInput$);  
+    const result$ = this.storeSearch.setFilter(userInput$);  
   }
 
   doSearch(searchWord: any) {
-    
+    // if(!searchWord.data){
+    //   return;
+    // }
+    // this.storeSearch.setFilter(this.userInput$!);  
   }
 
 }

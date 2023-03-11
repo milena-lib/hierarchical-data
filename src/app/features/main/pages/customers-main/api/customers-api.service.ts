@@ -21,7 +21,7 @@ export class CustomersApiService {
     }
   ];
 
-  contacts: CustomerFullDetails[] = [
+  public contacts: CustomerFullDetails[] = [
     { 
       contact: [
         {
@@ -148,7 +148,8 @@ export class CustomersApiService {
           ]
         }
       ]
-    },{ 
+    },
+    { 
       contact: [
         {
           customerId: '654958336',

@@ -11,12 +11,18 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SearchComponent } from './components/search/search.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { CustomerComponent } from './pages/customers-main/components/customer/customer.component';
+import { ContactsTreeComponent } from './pages/customers-main/components/contacts-tree/contacts-tree.component';
+import { ContactDetailsComponent } from './pages/customers-main/components/contact-details/contact-details.component';
 
 @NgModule({
   declarations: [
     MainRootPageComponent,
     CustomersMainComponent,
-    CustomerListComponent    
+    CustomerListComponent,
+    CustomerComponent,
+    ContactsTreeComponent,
+    ContactDetailsComponent        
   ],
   imports: [
     CommonModule,

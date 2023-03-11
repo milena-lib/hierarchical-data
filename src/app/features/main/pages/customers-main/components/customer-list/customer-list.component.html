@@ -1,13 +1,3 @@
-<p><b>All customers:</b></p>
-<!-- <table>
-    <tr *ngFor="let item of customers">
-        <td>{{item.id}}</td>
-        <td>{{item.code}}</td>
-        <td>{{item.firstName}}</td>
-        <td>{{item.lastName}}</td>
-    </tr>
-</table> -->
-
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <ng-container matColumnDef="id">
@@ -34,5 +24,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;">
     </tr>
   </table>
+
+  
   
   

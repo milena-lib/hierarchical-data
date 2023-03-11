@@ -1,3 +1,5 @@
+<p><b>All customers:</b></p>
+
 <div class="loading" *ngIf="isBusy$ | async">
     <mat-spinner [diameter]="28"></mat-spinner>
 </div>
@@ -9,7 +11,20 @@
     </ng-container>
 </div>
 <br />
-<p><b>Search customers:</b></p>
-<div><app-search></app-search></div>
+
+<p><b>Search customer:</b></p>
+<div class="container">
+    <div class="left">
+        <div><app-search></app-search></div>
+        <div><app-customer></app-customer></div>
+    </div>
+    <div class="right">
+        <app-contacts-tree></app-contacts-tree>
+    </div>
+</div>
+
+
+
+
 
 <!-- <button (click)="stopObs()">Stop</button> -->
