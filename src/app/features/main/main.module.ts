@@ -8,21 +8,27 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomerListComponent } from './pages/customers-main/components/customer-list/customer-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SearchComponent } from './components/search/search.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     MainRootPageComponent,
     CustomersMainComponent,
-    CustomerListComponent
+    CustomerListComponent    
   ],
   imports: [
     CommonModule,
     MainRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatTreeModule,
     MatTableModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    SearchComponent
   ]
 })
 export class MainModule { }

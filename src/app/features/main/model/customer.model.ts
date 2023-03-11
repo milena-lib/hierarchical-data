@@ -10,6 +10,7 @@ export interface CustomerFullDetails{
 }
 
 export interface Contact {
+    customerId: string;
     id: string;
     firstName: string;
     lastName: string;
