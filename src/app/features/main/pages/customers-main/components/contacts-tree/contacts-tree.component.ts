@@ -31,4 +31,8 @@ export class ContactsTreeComponent implements OnInit {
     })
   }
 
+  onSelectContact(node: Contact) {
+    
+  }
+
 }

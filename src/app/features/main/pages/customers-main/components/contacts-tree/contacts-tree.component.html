@@ -1,15 +1,14 @@
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
-    <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle (click)="onSelectContact(node)">
         {{node.permLabel}} {{node.firstName}} {{node.lastName}} {{node.phone}}
     </mat-tree-node>
     <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
-        <div class="mat-tree-node">
-          <button mat-icon-button matTreeNodeToggle
-                  [attr.aria-label]="'Toggle ' + node.firstName">
+        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.firstName">
             <mat-icon class="mat-icon-rtl-mirror">
-              {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+              {{treeControl.isExpanded(node) ? 'remove' : 'add'}}
             </mat-icon>
-          </button>
+        </button>
+        <div class="mat-tree-node" (click)="onSelectContact(node)">
           {{node.permLabel}} {{node.firstName}} {{node.lastName}} {{node.phone}}
         </div>
         <div [class.example-tree-invisible]="!treeControl.isExpanded(node)"
@@ -17,5 +16,5 @@
           <ng-container matTreeNodeOutlet></ng-container>
       </div>
     </mat-nested-tree-node>
-  </mat-tree>
+</mat-tree>
   
