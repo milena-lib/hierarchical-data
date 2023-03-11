@@ -5,7 +5,7 @@ export interface Customer {
     lastName: string;
 }
 
-export interface CustomerFullDetails{
+export interface CustomerContacts{
     contact: Contact[];
 }
 

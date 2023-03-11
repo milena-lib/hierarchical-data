@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
-import { Customer, CustomerFullDetails } from '../../../model/customer.model';
+import { Customer, CustomerContacts } from '../../../model/customer.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class CustomersApiService {
     }
   ];
 
-  public contacts: CustomerFullDetails[] = [
+  public contacts: CustomerContacts[] = [
     { 
       contact: [
         {

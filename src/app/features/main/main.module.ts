@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CustomerComponent } from './pages/customers-main/components/customer/customer.component';
 import { ContactsTreeComponent } from './pages/customers-main/components/contacts-tree/contacts-tree.component';
 import { ContactDetailsComponent } from './pages/customers-main/components/contact-details/contact-details.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ContactDetailsComponent } from './pages/customers-main/components/conta
     MatTreeModule,
     MatTableModule,
     MatProgressSpinnerModule,
-    SearchComponent
+    SearchComponent,
+    MatIconModule
   ]
 })
 export class MainModule { }
