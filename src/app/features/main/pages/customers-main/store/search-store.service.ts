@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { map, Observable, startWith, Subject } from 'rxjs';
-import { Customer, CustomerContacts } from '../../../model/customer.model';
+import { Customer, Contacts } from '../../../model/customer.model';
 import { CustomersApiService } from '../api/customers-api.service';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class SearchStoreService {
   readonly customerContacts = this.custApi.contacts;
 
   results$ = new Subject<Customer[]>();
-  custContacts$ = new Subject<CustomerContacts[]>();
+  custContacts$ = new Subject<Contacts[]>();
 
   constructor(private readonly custApi: CustomersApiService) { }
 
@@ -28,7 +28,7 @@ export class SearchStoreService {
     //this.customerContacts.filter(item => item.contact )
     console.log("customer: ", customer);
 
-    const contacts = this.customerContacts.filter(x => x.contact[0].customerId === customer[0]?.id);
+    const contacts = this.customerContacts.filter(x => x.customerId === customer[0]?.id);
     this.custContacts$.next(contacts);
     console.log("contacts: ", contacts);
   }

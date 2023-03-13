@@ -5,11 +5,7 @@ export interface Customer {
     lastName: string;
 }
 
-export interface CustomerContacts{
-    contact: Contact[];
-}
-
-export interface Contact {
+export interface Contacts {
     customerId: string;
     id: string;
     firstName: string;
@@ -20,5 +16,5 @@ export interface Contact {
     userSiteSettings: boolean;
     userName: string;
     note: string; 
-    contact?: Contact[];    
+    contact?: Contacts[];   
 }

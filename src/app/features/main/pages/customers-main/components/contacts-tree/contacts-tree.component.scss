@@ -1,45 +1,89 @@
-.example-tree-invisible {
-    display: none;
-  }
+.example-tree {
+  direction: rtl;
+}
 
-  .example-tree {
-    direction: rtl;
-  }
-  
-  .example-tree ul,
-  .example-tree li {
-    margin-top: 0;
-    margin-bottom: 0;
-    list-style-type: none;
-  }
-  
-  /*
-   * This padding sets alignment of the nested nodes.
-   */
-  .example-tree .mat-nested-tree-node div[role=group] {
-    padding-right: 40px;
-  }
-  
-  /*
-   * Padding for leaf nodes.
-   * Leaf nodes need to have padding so as to align with other non-leaf nodes
-   * under the same parent.
-   */
-  .example-tree div[role=group] > .mat-tree-node {
-    margin-right: 40px;
-  }
+.mat-tree-node button {
+  margin: 0 0 0 8px;
+}
 
-  .mat-tree-node {
-    border: 1px solid navy;
-    cursor: pointer;
-  }
+.example-tree-progress-bar {
+  margin-right: 30px;
+}
 
-  .mat-nested-tree-node {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.example-tree-nested-node {
+  padding-right: 30px;
+}
 
-  div[role=group] {
-    width: 100%;
-  }
-  
+mat-tree {
+  margin-right: 40px;
+}
+
+.mat-tree-node {
+  padding: 8px 0;
+  z-index: 1;
+}
+
+.mat-nested-tree-node {
+  top: -24px;
+}
+
+ul, li { 
+  list-style: none; 
+  margin: 0; 
+  padding: 0;  
+}
+
+li.example-tree-container {
+  border-bottom: 0;
+}
+
+ul { 
+  padding-right: 40px; 
+}
+
+li { 
+  padding-right: 40px;
+  border: 1px dotted grey;
+  border-width: 0 1px 1px 0; 
+  position: relative;
+  top: -24px;
+}
+
+li.mat-tree-node,
+li div { 
+  margin: 0;
+  position: relative;
+  top: 24px; 
+}
+
+.node-block {
+  top: 0 !important;
+  padding: 8px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid navy;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.node-block.single {
+  min-height: 32px;
+}
+
+
+li ul {
+  border-top: 1px dotted grey;
+  margin-right: -40px;
+  padding-right: 60px;
+}
+
+.mat-nested-tree-node:last-child ul {
+  border-right: 1px solid white;
+  margin-right: -41px;
+  background-color: white;
+}
+
+.mat-icon-button {
+  z-index: 100;
+}

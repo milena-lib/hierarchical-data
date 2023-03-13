@@ -1,20 +1,57 @@
-<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+<!-- <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
     <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle (click)="onSelectContact(node)">
+      <li>
         {{node.permLabel}} {{node.firstName}} {{node.lastName}} {{node.phone}}
+      </li> 
     </mat-tree-node>
     <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
-        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.firstName">
+      <li class="example-tree-container"> 
+        <div class="mat-tree-node" (click)="onSelectContact(node)">
+          <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.firstName">
             <mat-icon class="mat-icon-rtl-mirror">
               {{treeControl.isExpanded(node) ? 'remove' : 'add'}}
             </mat-icon>
-        </button>
-        <div class="mat-tree-node" (click)="onSelectContact(node)">
+          </button>
           {{node.permLabel}} {{node.firstName}} {{node.lastName}} {{node.phone}}
         </div>
-        <div [class.example-tree-invisible]="!treeControl.isExpanded(node)"
-            role="group">
-          <ng-container matTreeNodeOutlet></ng-container>
-      </div>
+        <ul class="example-tree-nested-node">
+          <div [class.example-tree-invisible]="!treeControl.isExpanded(node)" role="group">
+            <ng-container matTreeNodeOutlet></ng-container>
+          </div>
+        </ul>
+      </li>
+      
     </mat-nested-tree-node>
+</mat-tree> -->
+
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+  <mat-nested-tree-node *matTreeNodeDef="let node" (click)="onSelectContact(node)">
+    <li>
+      <div class="mat-tree-node">
+        <div class="node-block single">
+          {{node.permLabel}} {{node.firstName}} {{node.lastName}} {{node.phone}} 
+        </div>
+      </div>
+    </li>
+  </mat-nested-tree-node> 
+  <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+    <li class="example-tree-container">
+      <div class="mat-tree-node" (click)="onSelectContact(node)">
+        <div class="node-block">
+          <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.firstName"><!--[matTreeNodeToggleRecursive]="false"-->
+            <mat-icon>
+              {{ treeControl.isExpanded(node) ? 'remove' : 'add' }}
+            </mat-icon>
+          </button>
+          {{node.permLabel}} {{node.firstName}} {{node.lastName}} {{node.phone}}
+        </div>
+      </div>
+      <ul class="example-tree-nested-node">
+        <div *ngIf="treeControl.isExpanded(node)">
+          <ng-container matTreeNodeOutlet></ng-container>
+        </div>
+      </ul>
+    </li>
+  </mat-nested-tree-node>
 </mat-tree>
-  
+

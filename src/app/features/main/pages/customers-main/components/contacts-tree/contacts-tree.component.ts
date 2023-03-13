@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Contact, Customer, CustomerContacts } from 'src/app/features/main/model/customer.model';
+import { Customer, Contacts } from 'src/app/features/main/model/customer.model';
 import { SearchStoreService } from '../../store/search-store.service';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
@@ -11,11 +11,11 @@ import { MatTreeNestedDataSource } from '@angular/material/tree';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactsTreeComponent implements OnInit {
-  treeControl = new NestedTreeControl<Contact>(node => node.contact);
-  dataSource = new MatTreeNestedDataSource<Contact>();
+  treeControl = new NestedTreeControl<Contacts>(node => node.contact);
+  dataSource = new MatTreeNestedDataSource<Contacts>();
 
-  hasChild = (_: number, node: Contact) => !!node.contact && node.contact.length > 0;
-
+  hasChild = (_: number, node: Contacts) => !!node.contact && node.contact.length > 0;
+  
   constructor(private readonly storeSearch: SearchStoreService) { }
 
   ngOnInit(): void {
@@ -25,13 +25,13 @@ export class ContactsTreeComponent implements OnInit {
       }
     });
 
-    this.storeSearch.custContacts$.subscribe((event: CustomerContacts[]) => {
-      this.dataSource.data = event[0].contact;
+    this.storeSearch.custContacts$.subscribe((event: Contacts[]) => {
+      this.dataSource.data = event;
       console.log("dataSource: ", this.dataSource.data);
     })
   }
 
-  onSelectContact(node: Contact) {
+  onSelectContact(node: Contacts) {
     
   }
 
