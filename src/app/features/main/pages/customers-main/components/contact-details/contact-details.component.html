@@ -1,1 +1,6 @@
-<p>contact-details works!</p>
+<div *ngIf="contact$ | async as contact">
+    <div>Contact Name: {{contact.firstName}} {{contact.lastName}}</div>
+    <div>Phone: {{contact.phone}}</div>
+    <div>Email: {{contact.email}}</div>
+    <div>Permission Label: {{contact.permLabel}}</div>
+</div>

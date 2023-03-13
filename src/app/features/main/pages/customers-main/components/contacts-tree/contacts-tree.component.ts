@@ -3,6 +3,7 @@ import { Customer, Contacts } from 'src/app/features/main/model/customer.model';
 import { SearchStoreService } from '../../store/search-store.service';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
+import { ContactsStoreService } from '../../store/contacts-store.service';
 
 @Component({
   selector: 'app-contacts-tree',
@@ -16,7 +17,8 @@ export class ContactsTreeComponent implements OnInit {
 
   hasChild = (_: number, node: Contacts) => !!node.contact && node.contact.length > 0;
   
-  constructor(private readonly storeSearch: SearchStoreService) { }
+  constructor(private readonly storeSearch: SearchStoreService,
+    private readonly contactStore: ContactsStoreService) { }
 
   ngOnInit(): void {
     this.storeSearch.results$.subscribe((event: Customer[]) => {
@@ -32,7 +34,8 @@ export class ContactsTreeComponent implements OnInit {
   }
 
   onSelectContact(node: Contacts) {
-    
+    this.contactStore.selectContact(node);
+
   }
 
 }
