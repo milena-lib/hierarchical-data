@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { interval, Subject, takeUntil } from 'rxjs';
 import { CustomersMainStoreService } from './store/customers-main-store.service';
+import sampleData from '../../../../../assets/data.json';
 
 @Component({
   selector: 'app-customers-main',
@@ -16,6 +17,8 @@ export class CustomersMainComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.loadCustomers();
+
+    console.log("sampleData: ", sampleData);
 
     // this.obs.subscribe(val => console.log(val));
   } 

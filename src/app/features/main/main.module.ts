@@ -23,7 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
     CustomerListComponent,
     CustomerComponent,
     ContactsTreeComponent,
-    ContactDetailsComponent   
+    ContactDetailsComponent
   ],
   imports: [
     CommonModule,
