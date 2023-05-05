@@ -6,7 +6,7 @@ import { Contacts, Customers } from '../../../model/customer.model';
   providedIn: 'root'
 })
 export class CustomersApiService {
-  public contacts: Contacts[] = [
+  public contacts: Contacts[] = [ //אנשי קשר
     {
       id: '023564643',
       code: '1.8568.55',
@@ -21,7 +21,7 @@ export class CustomersApiService {
     }
   ];
 
-  public customers: Customers[] = [
+  public customers: Customers[] = [ //לקוחות
     { 
       contactId: '654958336',
       id: '',
