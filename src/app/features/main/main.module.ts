@@ -12,9 +12,11 @@ import { SearchComponent } from './components/search/search.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CustomerComponent } from './pages/customers-main/components/customer/customer.component';
-import { ContactsTreeComponent } from './pages/customers-main/components/contacts-tree/contacts-tree.component';
+import { ContactsTreeComponent } from './pages/contacts-main/components/contacts-tree/contacts-tree.component';
 import { ContactDetailsComponent } from './pages/customers-main/components/contact-details/contact-details.component';
 import { MatIconModule } from '@angular/material/icon';
+import { ContactsMainComponent } from './pages/contacts-main/contacts-main.component';
+import { ContactsTreeComponentTemp } from './pages/customers-main/components/contacts-tree/contacts-tree.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +25,12 @@ import { MatIconModule } from '@angular/material/icon';
     CustomerListComponent,
     CustomerComponent,
     ContactsTreeComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
+    ContactsMainComponent,
+    ContactsTreeComponentTemp
   ],
   imports: [
     CommonModule,
-    MainRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
@@ -35,8 +38,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatTreeModule,
     MatTableModule,
     MatProgressSpinnerModule,
-    SearchComponent,
-    MatIconModule
+    MainRoutingModule,
+    MatIconModule,
+    SearchComponent
   ]
 })
 export class MainModule { }

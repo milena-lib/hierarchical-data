@@ -1,17 +1,17 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Customer, Contacts } from 'src/app/features/main/model/customer.model';
-import { SearchStoreService } from '../../store/search-store.service';
+import { Contacts, Customer } from 'src/app/features/main/model/customer.model';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
-import { ContactsStoreService } from '../../store/contacts-store.service';
+import { SearchStoreService } from '../../../customers-main/store/search-store.service';
+import { ContactsStoreService } from '../../../customers-main/store/contacts-store.service';
 
 @Component({
-  selector: 'app-contacts-tree-temp',
+  selector: 'app-contacts-tree',
   templateUrl: './contacts-tree.component.html',
   styleUrls: ['./contacts-tree.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContactsTreeComponentTemp implements OnInit {
+export class ContactsTreeComponent implements OnInit {
   treeControl = new NestedTreeControl<Contacts>(node => node.contact);
   dataSource = new MatTreeNestedDataSource<Contacts>();
 
