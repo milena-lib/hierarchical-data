@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { map, Observable, startWith, Subject } from 'rxjs';
-import { Customer, Contacts } from '../../../model/customer.model';
+import { Contacts, Customers } from '../../../model/customer.model';
 import { CustomersApiService } from '../api/customers-api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchStoreService {
-  readonly allCustomers = this.custApi.customers; //VALUES_FOR_RONI_DEMO;
-  readonly customerContacts = this.custApi.contacts;
+  readonly allCustomers = this.custApi.contacts; //VALUES_FOR_RONI_DEMO;
+  readonly customerContacts = this.custApi.customers;
 
-  results$ = new Subject<Customer[]>();
-  custContacts$ = new Subject<Contacts[]>();
+  results$ = new Subject<Contacts[]>();
+  custContacts$ = new Subject<Customers[]>();
 
   constructor(private readonly custApi: CustomersApiService) { }
 
@@ -24,11 +24,11 @@ export class SearchStoreService {
         });
   }
 
-  loadContacts(customer: Customer[]) {
+  loadContacts(customer: Contacts[]) {
     //this.customerContacts.filter(item => item.contact )
     console.log("customer: ", customer);
 
-    const contacts = this.customerContacts.filter(x => x.customerId === customer[0]?.id);
+    const contacts = this.customerContacts.filter(x => x.contactId === customer[0]?.id);
     this.custContacts$.next(contacts);
     console.log("contacts: ", contacts);
   }

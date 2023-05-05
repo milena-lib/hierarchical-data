@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchStoreService } from '../../store/search-store.service';
-import { Customer } from 'src/app/features/main/model/customer.model';
+import { Contacts } from 'src/app/features/main/model/customer.model';
 
 @Component({
   selector: 'app-customer',
@@ -15,7 +15,7 @@ export class CustomerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goResults(item: Customer) {
+  goResults(item: Contacts) {
     console.log("result: ", item);
   }
 

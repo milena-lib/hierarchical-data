@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
-import { Customer, Contacts } from '../../../model/customer.model';
+import { Contacts, Customers } from '../../../model/customer.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomersApiService {
-  public customers: Customer[] = [
+  public contacts: Contacts[] = [
     {
       id: '023564643',
       code: '1.8568.55',
@@ -21,9 +21,9 @@ export class CustomersApiService {
     }
   ];
 
-  public contacts: Contacts[] = [
+  public customers: Customers[] = [
     { 
-      customerId: '654958336',
+      contactId: '654958336',
       id: '',
       firstName: 'Israel',
       lastName: 'Israel',
@@ -35,7 +35,7 @@ export class CustomersApiService {
       note: '',
       contact: [
         {
-          customerId: '',
+          contactId: '',
           id: '',
           firstName: 'Israel',
           lastName: 'Israel',
@@ -47,7 +47,7 @@ export class CustomersApiService {
           note: '',
           contact: [
             {
-              customerId: '',
+              contactId: '',
               id: '',
               firstName: 'Israel',
               lastName: 'Israel',
@@ -59,7 +59,7 @@ export class CustomersApiService {
               note: '',
               contact: [
                 {
-                  customerId: '',
+                  contactId: '',
                   id: '',
                   firstName: 'Israel',
                   lastName: 'Israel',
@@ -71,7 +71,7 @@ export class CustomersApiService {
                   note: '',
                   contact: [
                     {
-                      customerId: '',
+                      contactId: '',
                       id: '',
                       firstName: 'Israel',
                       lastName: 'Israel',
@@ -91,7 +91,7 @@ export class CustomersApiService {
       ]
     },
     {
-      customerId: '023564643',
+      contactId: '023564643',
       id: '',
       firstName: 'Israel',
       lastName: 'Israel',
@@ -103,7 +103,7 @@ export class CustomersApiService {
       note: '',
       contact: [
         {
-          customerId: '',
+          contactId: '',
           id: '',
           firstName: 'Israel',
           lastName: 'Israel',
@@ -115,7 +115,7 @@ export class CustomersApiService {
           note: '',
           contact: [
             {
-              customerId: '',
+              contactId: '',
               id: '',
               firstName: 'Israel',
               lastName: 'Israel',
@@ -129,7 +129,7 @@ export class CustomersApiService {
           ]
         },
         {
-          customerId: '',
+          contactId: '',
           id: '',
           firstName: '',
           lastName: '',
@@ -143,7 +143,7 @@ export class CustomersApiService {
       ]
     },
     { 
-      customerId: '654958336',
+      contactId: '654958336',
       id: '',
       firstName: 'Shalom',
       lastName: 'Shalom',
@@ -155,7 +155,7 @@ export class CustomersApiService {
       note: '',
       contact: [
         {
-          customerId: '',
+          contactId: '',
           id: '',
           firstName: 'Shalom',
           lastName: 'Shalom',
@@ -167,7 +167,7 @@ export class CustomersApiService {
           note: '',
           contact: [
             {
-              customerId: '',
+              contactId: '',
               id: '',
               firstName: 'Shalom',
               lastName: 'Shalom',
@@ -179,7 +179,7 @@ export class CustomersApiService {
               note: '',
               contact: [
                 {
-                  customerId: '',
+                  contactId: '',
                   id: '',
                   firstName: 'Shalom',
                   lastName: 'Shalom',
@@ -201,7 +201,7 @@ export class CustomersApiService {
 
   constructor() { }
 
-  getCustomers(): Observable<Customer[]> {
-    return of(this.customers).pipe(delay(1500));
+  getCustomers(): Observable<Contacts[]> {
+    return of(this.contacts).pipe(delay(1500));
   }
 }

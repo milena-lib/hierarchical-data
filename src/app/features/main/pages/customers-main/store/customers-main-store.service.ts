@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
-import { Customer } from '../../../model/customer.model';
+import { Contacts } from '../../../model/customer.model';
 import { CustomersApiService } from '../api/customers-api.service';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { CustomersApiService } from '../api/customers-api.service';
 export class CustomersMainStoreService implements OnDestroy {
   private readonly destroy$ = new Subject<void>();
   private readonly isBusySubject = new BehaviorSubject<boolean>(false);
-  private readonly customersSubject = new BehaviorSubject<Customer[]>([]);
+  private readonly customersSubject = new BehaviorSubject<Contacts[]>([]);
 
   readonly isBusy$ = this.isBusySubject.pipe(distinctUntilChanged());
   readonly customers$ = this.customersSubject.asObservable();

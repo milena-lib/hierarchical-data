@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Contacts } from '../../../model/customer.model';
+import { Customers } from '../../../model/customer.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactsStoreService {
-  private readonly contactSubject = new BehaviorSubject<Contacts | null>(null);
+  private readonly contactSubject = new BehaviorSubject<Customers | null>(null);
   readonly contact$ = this.contactSubject.asObservable();
 
   constructor() { }
 
-  selectContact(contact: Contacts) {
+  selectContact(contact: Customers) {
     this.contactSubject.next(contact);
   }
 }
