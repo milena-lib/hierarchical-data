@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
+import { NotificationComponent } from '../components/notification/notification.component';
 
 @Component({
   selector: 'app-main-root-page',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainRootPageComponent implements OnInit {
 
-  constructor() { }
+  durationInSeconds = 5;
+
+  constructor(private snackBar: MatSnackBar) {}
+
+  openSnackBar() {
+    this.snackBar.openFromComponent(NotificationComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
+  }
 
   ngOnInit(): void {
   }

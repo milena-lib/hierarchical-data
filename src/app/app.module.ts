@@ -18,6 +18,10 @@ import { CoreModule } from './core/core.module';
         path: 'main',
         loadChildren: () => import('./features/main/main.module').then(x => x.MainModule)
       },
+      {
+        path: 'general',
+        loadChildren: () => import('./features/main/main.module').then(x => x.MainModule)
+      },
       { path: '', pathMatch: 'full', redirectTo: 'main'}
     ]),
     BrowserAnimationsModule 

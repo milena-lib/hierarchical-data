@@ -30,6 +30,7 @@ export class ContactsTreeComponent implements OnInit {
     this.storeSearch.custContacts$.subscribe((event: Customers[]) => {
       this.dataSource.data = event;
       console.log("dataSource: ", this.dataSource.data);
+      console.log("event: ", event);
     })
   }
 

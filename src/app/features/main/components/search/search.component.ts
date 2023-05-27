@@ -8,11 +8,12 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { CustomersApiService } from '../../pages/customers-main/api/customers-api.service';
 import { SearchStoreService } from '../../pages/customers-main/store/search-store.service';
+import { SpecialCharacterDirective } from '../../directives/special-character.directive';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule],  
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, SpecialCharacterDirective],  
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

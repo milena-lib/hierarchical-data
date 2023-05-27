@@ -1,7 +1,11 @@
 <form [formGroup]="searchForm">
     <mat-form-field appearance="outline">
-        <mat-label>Search</mat-label>
-        <input matInput placeholder="Customer Id." formControlName="searchControl" (input)="doSearch($event)" autofocus><!-- (input)="doSearch($event)"-->
+        <mat-label>Search Id.</mat-label>
+        <input matInput placeholder="Customer Id." 
+            formControlName="searchControl" 
+            (input)="doSearch($event)" 
+            autofocus 
+            appSpecialCharachter><!-- (input)="doSearch($event)"-->
     </mat-form-field>
 </form> 
 
