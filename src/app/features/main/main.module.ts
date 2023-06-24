@@ -17,8 +17,6 @@ import { ContactDetailsComponent } from './pages/customers-main/components/conta
 import { MatIconModule } from '@angular/material/icon';
 import { ContactsMainComponent } from './pages/contacts-main/contacts-main.component';
 import { ContactsTreeComponentTemp } from './pages/customers-main/components/contacts-tree/contacts-tree.component';
-import { GeneralRootPageComponent } from './general-root-page/general-root-page.component';
-import { GeneralRoutingModule } from './general-routing.module';
 // import { SpecialCharacterDirective } from './directives/special-character.directive';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
@@ -31,8 +29,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ContactsTreeComponent,
     ContactDetailsComponent,
     ContactsMainComponent,
-    ContactsTreeComponentTemp,
-    GeneralRootPageComponent    
+    ContactsTreeComponentTemp  
     // SpecialCharacterDirective
   ],
   imports: [
@@ -45,7 +42,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatTableModule,
     MatProgressSpinnerModule,
     MainRoutingModule,
-    GeneralRoutingModule,
     MatIconModule,
     SearchComponent,
     MatSnackBarModule
