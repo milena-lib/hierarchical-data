@@ -10,6 +10,12 @@ export class CustomersApiService {
     {
       id: '023564643',
       code: '1.8568.55',
+      firstName: 'Dan',
+      lastName: 'Cruze'
+    },
+    {
+      id: '123564643',
+      code: '1.8568.55',
       firstName: 'Jonn',
       lastName: 'Smith'
     },
@@ -18,6 +24,12 @@ export class CustomersApiService {
       code: '1.10025.48',
       firstName: 'David',
       lastName: 'Cohen'
+    },
+    {
+      id: '654958221',
+      code: '1.10025.48',
+      firstName: 'Elis',
+      lastName: 'Daan'
     }
   ];
 

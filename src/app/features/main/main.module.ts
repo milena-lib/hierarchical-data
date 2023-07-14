@@ -17,8 +17,11 @@ import { ContactDetailsComponent } from './pages/customers-main/components/conta
 import { MatIconModule } from '@angular/material/icon';
 import { ContactsMainComponent } from './pages/contacts-main/contacts-main.component';
 import { ContactsTreeComponentTemp } from './pages/customers-main/components/contacts-tree/contacts-tree.component';
-// import { SpecialCharacterDirective } from './directives/special-character.directive';
+import { SpecialCharacterDirective } from './directives/special-character.directive';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SearchDebounceComponent } from './pages/search-debounce/search-debounce.component';
+import { CtrlClickDirective } from './directives/ctrl-click.directive';
+import {CdkTreeModule} from '@angular/cdk/tree';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ContactsTreeComponent,
     ContactDetailsComponent,
     ContactsMainComponent,
-    ContactsTreeComponentTemp  
+    ContactsTreeComponentTemp,
+    SearchDebounceComponent,
+    CtrlClickDirective,
+    
     // SpecialCharacterDirective
   ],
   imports: [
@@ -44,7 +50,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MainRoutingModule,
     MatIconModule,
     SearchComponent,
-    MatSnackBarModule
+    MatSnackBarModule,
+    CdkTreeModule
   ]
 })
 export class MainModule { }

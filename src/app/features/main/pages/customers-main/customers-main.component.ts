@@ -63,4 +63,11 @@ export class CustomersMainComponent implements OnInit {
   //   console.log(this.notifier);
   // }
 
+  onClick() {
+    alert("on click event");
+  }
+
+  onCtrlClick() {
+    alert("on CTRL click event");
+  }
 }

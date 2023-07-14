@@ -9,7 +9,7 @@ import { ContactsStoreService } from '../../../customers-main/store/contacts-sto
   selector: 'app-contacts-tree',
   templateUrl: './contacts-tree.component.html',
   styleUrls: ['./contacts-tree.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactsTreeComponent implements OnInit {
   treeControl = new NestedTreeControl<Customers>(node => node.contact);

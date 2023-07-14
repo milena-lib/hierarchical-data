@@ -2,8 +2,10 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Contacts, Customers } from 'src/app/features/main/model/customer.model';
 import { SearchStoreService } from '../../store/search-store.service';
 import { NestedTreeControl } from '@angular/cdk/tree';
-import { MatTreeNestedDataSource } from '@angular/material/tree';
+import { MatTreeNestedDataSource, MatTreeModule } from '@angular/material/tree';
 import { ContactsStoreService } from '../../store/contacts-store.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-contacts-tree-temp',
