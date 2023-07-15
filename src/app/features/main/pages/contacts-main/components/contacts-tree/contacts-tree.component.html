@@ -1,35 +1,9 @@
-<!-- <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
-    <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle (click)="onSelectContact(node)">
-      <li>
-        {{node.permLabel}} {{node.firstName}} {{node.lastName}} {{node.phone}}
-      </li> 
-    </mat-tree-node>
-    <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
-      <li class="example-tree-container"> 
-        <div class="mat-tree-node" (click)="onSelectContact(node)">
-          <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.firstName">
-            <mat-icon class="mat-icon-rtl-mirror">
-              {{treeControl.isExpanded(node) ? 'remove' : 'add'}}
-            </mat-icon>
-          </button>
-          {{node.permLabel}} {{node.firstName}} {{node.lastName}} {{node.phone}}
-        </div>
-        <ul class="example-tree-nested-node">
-          <div [class.example-tree-invisible]="!treeControl.isExpanded(node)" role="group">
-            <ng-container matTreeNodeOutlet></ng-container>
-          </div>
-        </ul>
-      </li>
-      
-    </mat-nested-tree-node>
-</mat-tree> -->
-
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
-  <mat-nested-tree-node *matTreeNodeDef="let node" (click)="onSelectContact(node)">
+  <mat-nested-tree-node *matTreeNodeDef="let node">
     <li>
-      <div class="mat-tree-node">
-        <div class="node-block single">
-          {{node.permLabel}} {{node.firstName}} {{node.lastName}} {{node.phone}} 
+      <div class="mat-tree-node" (click)="onSelectContact(node)" >
+        <div class="node-block single" (ctrl-click)="onSelectMultiContacts(node)" [class.active]="node.isActive">
+          {{node.permLabel}} <b> {{node.id}}  </b>
         </div>
       </div>
     </li>
@@ -37,13 +11,13 @@
   <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
     <li class="example-tree-container">
       <div class="mat-tree-node" (click)="onSelectContact(node)">
-        <div class="node-block">
+        <div class="node-block" (ctrl-click)="onSelectMultiContacts(node)" [class.active]="node.isActive">
           <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.firstName">
             <mat-icon>
               {{ treeControl.isExpanded(node) ? 'remove' : 'add' }}
             </mat-icon>
           </button>
-          {{node.permLabel}} {{node.firstName}} {{node.lastName}} {{node.phone}}
+          {{node.permLabel}} <b> {{node.id}}  </b>
         </div>
       </div>
       <ul class="example-tree-nested-node">

@@ -34,9 +34,72 @@ export class ContactsTreeComponent implements OnInit {
     })
   }
 
+  selectedNodes: Customers[]=[];
   onSelectContact(node: Customers) {
-    this.contactStore.selectContact(node);
+    
+    if(this.selectedNodes.length <= 1){
+      node.isActive = !node.isActive;
+      this.setSelectedsNodes(node);
 
+      console.log("dataSource: ", this.dataSource);
+      console.log("selectedNodes: ", this.selectedNodes);
+      return;
+    }
+
+    this.selectedNodes = [];
+    
+    this.dataSource.data.forEach((item: Customers) => {
+      item.isActive = false;            
+
+      this.setSelectedsNodes(node);
+      
+      if(item.contact?.length) {
+        this.setChildren(item.contact[0], node);
+      }
+    });
+
+    if(this.selectedNodes.length === 0){
+      node.isActive = true;      
+      // this.setSelectedsNodes(node);
+    }else{
+      node.isActive = !node.isActive;
+    }
+
+    this.setSelectedsNodes(node);
+
+    console.log("dataSource: ", this.dataSource);
+    console.log("selectedNodes: ", this.selectedNodes);
+  }
+
+  setChildren(item: Customers, selectedNode: Customers){
+    console.log("child: ", item);
+
+    item.isActive = false;  
+
+    this.setSelectedsNodes(item);
+
+    if(item.contact?.length) {
+      this.setChildren(item.contact[0], selectedNode);
+    }
+  }
+
+  onSelectMultiContacts(node: Customers) {
+    node.isActive = !node.isActive;
+
+    this.setSelectedsNodes(node);
+    console.log("selectedNodes: ", this.selectedNodes);
+  }
+
+  setSelectedsNodes(node: Customers) {
+    const index = this.selectedNodes.indexOf(node);
+    
+    if(node.isActive) {
+      if(index === -1) {
+        this.selectedNodes.push(node);
+      }      
+    }else{
+      this.selectedNodes.splice(index, 1);
+    }
   }
 
 }

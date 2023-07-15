@@ -30,13 +30,19 @@ export class CustomersApiService {
       code: '1.10025.48',
       firstName: 'Elis',
       lastName: 'Daan'
+    },
+    {
+      id: '654952222',
+      code: '1.10025.48',
+      firstName: 'Jenny',
+      lastName: 'Daan'
     }
   ];
 
   public customers: Customers[] = [ //לקוחות
     { 
       contactId: '654958336',
-      id: '',
+      id: '1',
       firstName: 'Israel',
       lastName: 'Israel',
       permLabel: '10',
@@ -45,10 +51,11 @@ export class CustomersApiService {
       userSiteSettings: true,
       userName: '',
       note: '',
+      isActive: false,
       contact: [
         {
           contactId: '',
-          id: '',
+          id: '1-0',
           firstName: 'Israel',
           lastName: 'Israel',
           permLabel: '20',
@@ -57,10 +64,11 @@ export class CustomersApiService {
           userSiteSettings: true,
           userName: '',
           note: '',
+          isActive: false,
           contact: [
             {
               contactId: '',
-              id: '',
+              id: '1-0-0',
               firstName: 'Israel',
               lastName: 'Israel',
               permLabel: '30',
@@ -69,34 +77,7 @@ export class CustomersApiService {
               userSiteSettings: true,
               userName: '',
               note: '',
-              contact: [
-                {
-                  contactId: '',
-                  id: '',
-                  firstName: 'Israel',
-                  lastName: 'Israel',
-                  permLabel: '40',
-                  phone: '0545566333',
-                  email: '',
-                  userSiteSettings: true,
-                  userName: '',
-                  note: '',
-                  contact: [
-                    {
-                      contactId: '',
-                      id: '',
-                      firstName: 'Israel',
-                      lastName: 'Israel',
-                      permLabel: '50',
-                      phone: '0525544896',
-                      email: '',
-                      userSiteSettings: true,
-                      userName: '',
-                      note: ''
-                    }
-                  ]
-                }
-              ]
+              isActive: false
             }
           ]
         }
@@ -104,7 +85,7 @@ export class CustomersApiService {
     },
     {
       contactId: '023564643',
-      id: '',
+      id: '2-0',
       firstName: 'Israel',
       lastName: 'Israel',
       permLabel: '10',
@@ -113,10 +94,11 @@ export class CustomersApiService {
       userSiteSettings: true,
       userName: '',
       note: '',
+      isActive: false,
       contact: [
         {
           contactId: '',
-          id: '',
+          id: '2-0-0',
           firstName: 'Israel',
           lastName: 'Israel',
           permLabel: '20',
@@ -125,10 +107,11 @@ export class CustomersApiService {
           userSiteSettings: true,
           userName: '',
           note: '',
+          isActive: false,
           contact: [
             {
               contactId: '',
-              id: '',
+              id: '2-0-0-0',
               firstName: 'Israel',
               lastName: 'Israel',
               permLabel: '30',
@@ -136,13 +119,14 @@ export class CustomersApiService {
               email: '',
               userSiteSettings: true,
               userName: '',
-              note: ''
+              note: '',
+              isActive: false
             }
           ]
         },
         {
           contactId: '',
-          id: '',
+          id: '2-0-1',
           firstName: '',
           lastName: '',
           permLabel: '20',
@@ -150,13 +134,14 @@ export class CustomersApiService {
           email: '',
           userSiteSettings: true,
           userName: '',
-          note: ''
+          note: '',
+          isActive: false
         }
       ]
     },
     { 
       contactId: '654958336',
-      id: '',
+      id: '2-1',
       firstName: 'Shalom',
       lastName: 'Shalom',
       permLabel: '10',
@@ -165,10 +150,11 @@ export class CustomersApiService {
       userSiteSettings: true,
       userName: '',
       note: '',
+      isActive: false,
       contact: [
         {
           contactId: '',
-          id: '',
+          id: '2-1-0',
           firstName: 'Shalom',
           lastName: 'Shalom',
           permLabel: '20',
@@ -177,10 +163,39 @@ export class CustomersApiService {
           userSiteSettings: true,
           userName: '',
           note: '',
+          isActive: false
+        }
+      ]
+    },
+    { 
+      contactId: '654958336',
+      id: '2-2',
+      firstName: 'Shalom',
+      lastName: 'Shalom',
+      permLabel: '10',
+      phone: '0525666333',
+      email: '',
+      userSiteSettings: true,
+      userName: '',
+      note: '',
+      isActive: false,
+      contact: [
+        {
+          contactId: '',
+          id: '2-2-0',
+          firstName: 'Shalom',
+          lastName: 'Shalom',
+          permLabel: '20',
+          phone: '0507418526',
+          email: '',
+          userSiteSettings: true,
+          userName: '',
+          note: '',
+          isActive: false,
           contact: [
             {
               contactId: '',
-              id: '',
+              id: '2-2-1',
               firstName: 'Shalom',
               lastName: 'Shalom',
               permLabel: '30',
@@ -189,20 +204,7 @@ export class CustomersApiService {
               userSiteSettings: true,
               userName: '',
               note: '',
-              contact: [
-                {
-                  contactId: '',
-                  id: '',
-                  firstName: 'Shalom',
-                  lastName: 'Shalom',
-                  permLabel: '40',
-                  phone: '0509518524',
-                  email: '',
-                  userSiteSettings: true,
-                  userName: '',
-                  note: ''
-                }
-              ]
+              isActive: false
             }
           ]
         }

@@ -16,5 +16,6 @@ export interface Customers {
     userSiteSettings: boolean;
     userName: string;
     note: string; 
+    isActive: boolean;
     contact?: Customers[];   
 }
