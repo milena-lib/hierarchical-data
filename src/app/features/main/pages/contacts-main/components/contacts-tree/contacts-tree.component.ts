@@ -60,7 +60,6 @@ export class ContactsTreeComponent implements OnInit {
 
     if(this.selectedNodes.length === 0){
       node.isActive = true;      
-      // this.setSelectedsNodes(node);
     }else{
       node.isActive = !node.isActive;
     }
