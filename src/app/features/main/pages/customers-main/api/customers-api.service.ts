@@ -40,6 +40,19 @@ export class CustomersApiService {
   ];
 
   public customers: Customers[] = [ //לקוחות
+    {
+      contactId: '654958336',
+      id: '0',
+      firstName: 'Ora',
+      lastName: 'Ora',
+      permLabel: '10',
+      phone: '0524447778',
+      email: '',
+      userSiteSettings: true,
+      userName: '',
+      note: '',
+      isActive: false
+    },
     { 
       contactId: '654958336',
       id: '1',
@@ -52,7 +65,7 @@ export class CustomersApiService {
       userName: '',
       note: '',
       isActive: false,
-      contact: [
+      children: [
         {
           contactId: '',
           id: '1-0',
@@ -65,7 +78,7 @@ export class CustomersApiService {
           userName: '',
           note: '',
           isActive: false,
-          contact: [
+          children: [
             {
               contactId: '',
               id: '1-0-0',
@@ -80,6 +93,19 @@ export class CustomersApiService {
               isActive: false
             }
           ]
+        },
+        {
+          contactId: '',
+          id: '1-1',
+          firstName: 'Moshe',
+          lastName: 'Moshe',
+          permLabel: '20',
+          phone: '0548899666',
+          email: '',
+          userSiteSettings: true,
+          userName: '',
+          note: '',
+          isActive: false
         }
       ]
     },
@@ -95,7 +121,7 @@ export class CustomersApiService {
       userName: '',
       note: '',
       isActive: false,
-      contact: [
+      children: [
         {
           contactId: '',
           id: '2-0-0',
@@ -108,7 +134,7 @@ export class CustomersApiService {
           userName: '',
           note: '',
           isActive: false,
-          contact: [
+          children: [
             {
               contactId: '',
               id: '2-0-0-0',
@@ -151,7 +177,7 @@ export class CustomersApiService {
       userName: '',
       note: '',
       isActive: false,
-      contact: [
+      children: [
         {
           contactId: '',
           id: '2-1-0',
@@ -179,7 +205,7 @@ export class CustomersApiService {
       userName: '',
       note: '',
       isActive: false,
-      contact: [
+      children: [
         {
           contactId: '',
           id: '2-2-0',
@@ -192,7 +218,7 @@ export class CustomersApiService {
           userName: '',
           note: '',
           isActive: false,
-          contact: [
+          children: [
             {
               contactId: '',
               id: '2-2-1',

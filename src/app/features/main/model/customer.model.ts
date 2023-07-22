@@ -17,5 +17,5 @@ export interface Customers {
     userName: string;
     note: string; 
     isActive: boolean;
-    contact?: Customers[];   
+    children?: Customers[];   
 }

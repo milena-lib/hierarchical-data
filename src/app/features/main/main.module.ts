@@ -22,6 +22,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SearchDebounceComponent } from './pages/search-debounce/search-debounce.component';
 import { CtrlClickDirective } from './directives/ctrl-click.directive';
 import {CdkTreeModule} from '@angular/cdk/tree';
+import { ScrollableDirective } from './directives/scrollable.directive';
+import { OffsetTopDirective } from './directives/offset-top.directive';
+import { FlatTreeComponent } from './pages/contacts-main/components/flat-tree/flat-tree.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,9 @@ import {CdkTreeModule} from '@angular/cdk/tree';
     ContactsTreeComponentTemp,
     SearchDebounceComponent,
     CtrlClickDirective,
+    ScrollableDirective,
+    OffsetTopDirective,
+    FlatTreeComponent
     
     // SpecialCharacterDirective
   ],
@@ -51,7 +58,8 @@ import {CdkTreeModule} from '@angular/cdk/tree';
     MatIconModule,
     SearchComponent,
     MatSnackBarModule,
-    CdkTreeModule
+    CdkTreeModule,
+    MatCheckboxModule
   ]
 })
 export class MainModule { }

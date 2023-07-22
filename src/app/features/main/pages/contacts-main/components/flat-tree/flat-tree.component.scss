@@ -1,0 +1,31 @@
+mat-tree {
+    height: 200px;
+    overflow: auto;
+    border: 1px solid red;
+    position: relative;
+    
+    mat-tree-node {
+        min-height: 0 !important;
+        
+        .dotted-lines {
+            border-left: 2px dotted gray;
+            padding-left: 20px;
+
+            .node-area{
+                border: 1px solid gray;
+                margin-top: 4px;
+                margin-bottom: 4px;
+            }
+        }
+
+        &[aria-level="1"] {
+            padding-left: 0px !important;
+
+            .dotted-lines {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+    }
+}
+

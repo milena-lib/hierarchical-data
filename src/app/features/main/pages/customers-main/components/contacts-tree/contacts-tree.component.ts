@@ -14,10 +14,10 @@ import { MatButtonModule } from '@angular/material/button';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactsTreeComponentTemp implements OnInit {
-  treeControl = new NestedTreeControl<Customers>(node => node.contact);
+  treeControl = new NestedTreeControl<Customers>(node => node.children);
   dataSource = new MatTreeNestedDataSource<Customers>();
 
-  hasChild = (_: number, node: Customers) => !!node.contact && node.contact.length > 0;
+  hasChild = (_: number, node: Customers) => !!node.children && node.children.length > 0;
   
   constructor(private readonly storeSearch: SearchStoreService,
     private readonly contactStore: ContactsStoreService) { }
