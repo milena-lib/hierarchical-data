@@ -16,7 +16,7 @@ import { ContactsTreeComponent } from './pages/contacts-main/components/contacts
 import { ContactDetailsComponent } from './pages/customers-main/components/contact-details/contact-details.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ContactsMainComponent } from './pages/contacts-main/contacts-main.component';
-import { ContactsTreeComponentTemp } from './pages/customers-main/components/contacts-tree/contacts-tree.component';
+// import { ContactsTreeComponentTemp } from './pages/customers-main/components/contacts-tree/contacts-tree.component';
 import { SpecialCharacterDirective } from './directives/special-character.directive';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SearchDebounceComponent } from './pages/search-debounce/search-debounce.component';
@@ -36,7 +36,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ContactsTreeComponent,
     ContactDetailsComponent,
     ContactsMainComponent,
-    ContactsTreeComponentTemp,
+    // ContactsTreeComponentTemp,
     SearchDebounceComponent,
     CtrlClickDirective,
     ScrollableDirective,
